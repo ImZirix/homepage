@@ -19,27 +19,29 @@ header {
   align-items: center;
   gap: 20px;
   padding: min(3em, 10%);
-  max-width: 1000px;
+  width: 100%;
   margin-bottom: 50px;
 }
 header img {
-  max-width: 250px;
+  max-width: 400px;
 }
 header p {
-  max-width: 300px;
+  max-width: 400px;
   text-align: center;
 }
 .grid {
   display: grid;
   width: 100%;
-  max-width: 900px; /* Optional: Prevents grid from stretching too wide */
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 20px;
+  max-width: 1600px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
   padding: min(3em, 10%);
+  margin-bottom: 50px;
 }
 .img {
   background-color: hsl(0, 0%, 10%);
-  min-height: 150px;
+  width: 1fr;
+  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -52,21 +54,29 @@ header p {
 .para p {
   color: hsl(0, 0%, 70%);
 }
+.para {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 .grid-item {
   position: relative;
+  margin-bottom: 30px;
+  width: 100%;
 }
 .icon {
   position: absolute;
-  right: 5px;
-  bottom: 3.2rem;
+  right: 10px;
+  bottom: 3.5rem;
 }
 footer {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: min(3em, 10%);
+  width: 100%;
 }
 footer img {
   max-width: 200px;
@@ -76,6 +86,8 @@ footer img {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
+  height: 300px;
   /* gap: 10px; */
 }
 .contact {
@@ -85,22 +97,33 @@ footer img {
 footer h2 {
   margin-bottom: 10px;
 }
-
-@media (max-width: 500px) {
+.icon:hover {
+  cursor: pointer;
+}
+.icon {
+  scale: 1.5;
+}
+.svgs {
+  scale: 1.5;
+  position: absolute;
+  bottom: 0;
+  left: 14px;
+}
+.para:nth-of-type(1) {
+  margin-bottom: 200px;
+}
+@media (max-width: 744px) {
   .icon {
-    right: 5px;
-    bottom: 3rem;
+    bottom: 2rem;
   }
 }
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    grid-template-rows: auto; /* Allow rows to adjust */
+@media (max-width: 596px) {
+  .icon {
+    bottom: 3.2rem;
   }
 }
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: 1fr; /* 1 column on small screens */
+@media (max-width: 860px) {
+  footer {
+    justify-content: center;
   }
 }
